@@ -6,11 +6,11 @@ public class CameraRotation : MonoBehaviour
 {
 
     public GameObject player;
-    private float speed = 200;
+    private float m_rotationSpeed = 200;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+       
         //playerCamera.transform.position = playerFollower.transform.position + new Vector3(0, 1, -5);
     }
 
@@ -19,7 +19,7 @@ public class CameraRotation : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         
-        transform.Rotate(Vector3.down, horizontalInput * speed * Time.deltaTime);
+        transform.Rotate(Vector3.down, horizontalInput * m_rotationSpeed * Time.deltaTime);
 
         transform.position = player.transform.position;
     }
